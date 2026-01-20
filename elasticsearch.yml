@@ -1,0 +1,23 @@
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+discovery.type: single-node
+network.host: 0.0.0.0
+http.host: 0.0.0.0
+http.port: 9200
+xpack.security.enabled: false
+xpack.security.transport.ssl.enabled: false
+xpack.security.http.ssl.enabled: false
+xpack.security.enrollment.enabled: false
+#xpack.security.enabled: true
+#xpack.security.transport.ssl:
+# enabled: true
+# verification_mode: certificate
+# keystore.path: /etc/elasticsearch/elastic-certificates.p12
+# keystore.password: ubuntuserver1234
+# truststore.path: /etc/elasticsearch/elastic-certificates.p12
+# truststore.password: ubuntuserver1234
+#xpack.security.http.ssl:
+# enabled: true
+# keystore.path: /etc/elasticsearch/elastic-certificates.p12
+# keystore.password: ubuntuserver1234
+#xpack.security.enrollment.enabled: true

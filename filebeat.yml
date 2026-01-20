@@ -1,0 +1,29 @@
+filebeat.inputs:
+- type: log
+  id: honeypot-id
+  enabled: true
+  paths:
+   - /home/ubuntu/honeypot_json/*
+  fields:
+   document_type: honeypot
+  fields_under_root: true
+filebeat.config.modules:
+ path: ${path.config}/modules.d/*.yml
+ reload.enabled: false
+setup.template.settings:
+ index.number_of_shards: 1
+setup.kibana:
+ host: "http://localhost:5601"
+# username: "elastic"
+# password: "ubuntuserver1234"
+# ssl.certificate_authorities: ["/etc/kibana/certs/elastic-stack-ca.p12"]
+output.logstash:
+ hosts: ["http://localhost:5044"]
+#output.elasticsearch:
+# hosts: ["https://localhost:9200"]
+# username: "elastic"
+# password: "ubuntuserver1234"
+# ssl.certificate_authorities: ["/etc/elasticsearch/elastic-stack-ca.p12"]
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded

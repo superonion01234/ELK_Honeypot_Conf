@@ -1,0 +1,25 @@
+server.port: 5601
+server.host: "0.0.0.0"
+logging:
+  appenders:
+    file:
+      type: file
+      fileName: /var/log/kibana/kibana.log
+      layout:
+        type: json
+  root:
+    appenders:
+      - default
+      - file
+pid.file: /run/kibana/kibana.pid
+#server.ssl.enabled: true
+#server.ssl.certificate: /etc/kibana/certs/kibana_system_user.crt
+#server.ssl.key: /etc/kibana/certs/kibana_system_user.key
+xpack.encryptedSavedObjects.encryptionKey: "a_secure_32_characters_long_key!"
+xpack.reporting.encryptionKey: "a_secure_32_characters_long_key!"
+xpack.security.encryptionKey: "a_secure_32_characters_long_key!"
+#elasticsearch.hosts: ["https://instance:9200"]
+#elasticsearch.username: "kibana_system_user"
+#elasticsearch.password: "ubuntuserver1234"
+#elasticsearch.ssl.verificationMode: certificate
+#elasticsearch.ssl.certificateAuthorities: ["/etc/kibana/certs/elastic-certificates.crt"]
