@@ -13,17 +13,8 @@ filebeat.config.modules:
 setup.template.settings:
  index.number_of_shards: 1
 setup.kibana:
- host: "http://localhost:5601"
-# username: "elastic"
-# password: "ubuntuserver1234"
-# ssl.certificate_authorities: ["/etc/kibana/certs/elastic-stack-ca.p12"]
 output.logstash:
- hosts: ["http://localhost:5044"]
-#output.elasticsearch:
-# hosts: ["https://localhost:9200"]
-# username: "elastic"
-# password: "ubuntuserver1234"
-# ssl.certificate_authorities: ["/etc/elasticsearch/elastic-stack-ca.p12"]
+ hosts: ["localhost:5044"]
 processors:
   - add_host_metadata:
       when.not.contains.tags: forwarded
